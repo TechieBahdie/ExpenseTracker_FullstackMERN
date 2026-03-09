@@ -5,6 +5,7 @@ export const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  const url = "https://expensetracker-fullstackmern-backend.onrender.com"
   // Function to update user data
   const updateUser = (userData) => {
     setUser(userData);
