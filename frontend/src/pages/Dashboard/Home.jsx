@@ -31,9 +31,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await axiosInstance.get(
-        `${API_PATHS.DASHBOARD.GET_DATA}`
-      );
+      const response = await axiosInstance.get(`${API_PATHS.DASHBOARD.GET_DATA}`);
 
       if (response.data) {
         setDashboardData(response.data);
@@ -47,7 +45,6 @@ const Home = () => {
 
   useEffect(() => {
     fetchDashboardData();
-
     return () => {};
   }, []);
 
@@ -99,7 +96,7 @@ const Home = () => {
           />
 
           <RecentIncomeWithChart
-            data={dashboardData?.last60DaysIncome?.transactions?.slice(0,4) || []}
+            data={dashboardData?.last60DaysIncome?.transactions?.slice(0, 4) || []}
             totalIncome={dashboardData?.totalIncome || 0}
           />
 
